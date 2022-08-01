@@ -9,8 +9,8 @@ public class Inimigo : MonoBehaviour
     {
         UnityEngine.AI.NavMeshAgent enemy = GetComponent<UnityEngine.AI.NavMeshAgent>();
         GameObject fimDoCaminho = GameObject.Find ("fimDoCaminho");
-        Vector3 posicaoDoFimDoCaminho = fimDoCaminho.transform.position;
-        enemy.SetDestination (posicaoDoFimDoCaminho);
+        Vector3 posicaoFimDoCaminho = fimDoCaminho.transform.position;
+        enemy.SetDestination (posicaoFimDoCaminho);
 
     }
 
