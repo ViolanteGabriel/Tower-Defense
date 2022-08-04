@@ -8,10 +8,10 @@ public class EnemyPath : MonoBehaviour
     void Start()
     {
         UnityEngine.AI.NavMeshAgent agente = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        GameObject fimDoCaminho = GameObject.Find("Fim");
+        GameObject fimDoCaminho = GameObject.Find("fimDoCaminho");
         Vector3 posicaoDoFimDoCaminho = fimDoCaminho.transform.position;
 
-        agente.SetDestination (posicaoDoFimDoCaminho);
+        agente.SetDestination(posicaoDoFimDoCaminho);
     }
 
     // Update is called once per frame
