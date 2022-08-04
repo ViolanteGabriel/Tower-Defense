@@ -44,3 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeb3ace2fc071dc4d82dc07049578837, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Enemy: {fileID: 921202741095631123, guid: 7c06dcff3570ed9459d10120583dbb13, type: 3}
+  timeBetweenWaves: 2
