@@ -5,8 +5,11 @@ using UnityEngine;
 public class Torret : MonoBehaviour
 {
     public Transform target;
+    public Transform partToRotate;
     public float range = 30f;
+    public float turretTurnSpeed = 10f;
     public string enemyTag = "Enemy";
+    
 
 
     // Start is called before the first frame update
@@ -39,6 +42,12 @@ public class Torret : MonoBehaviour
     void Update()
     {
         if (target == null) return;
+
+        Vector3 direction = target.position - transform.position;
+        Quaternion rotationDirection = Quaternion.LookRotation(direction);
+        Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, rotationDirection, Time.deltaTime * turretTurnSpeed).eulerAngles;
+
+        partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
     }
 
 }
