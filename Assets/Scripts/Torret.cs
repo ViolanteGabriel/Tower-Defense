@@ -5,14 +5,15 @@ using UnityEngine;
 public class Torret : MonoBehaviour
 {
     private Transform target;
+    public Transform partToRotate;
+
     private float range = 15f;
     private float turretTurnSpeed = 10f;
     private float fireRate = 1f;
     private float fireCountdown = 0f;
     private string enemyTag = "Enemy";
-
-    public Transform partToRotate;
-    
+    public GameObject bulletPrefab;
+    public Transform firePoint;
 
 
     // Start is called before the first frame update
@@ -43,6 +44,10 @@ public class Torret : MonoBehaviour
 
     void Fire()
     {
+        GameObject bulletGameObject = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Bullet bullet = bulletGameObject.GetComponent<Bullet>();
+
+        if (bullet != null) bullet.Chase(target);
 
     }
 
