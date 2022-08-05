@@ -5,9 +5,8 @@ using UnityEngine;
 public class waveGenerator : MonoBehaviour
 {
     [SerializeField] private GameObject Enemy;
-    private float lastGeneration;
-    [Range(0, 3)]
-    [SerializeField] private float WaveCooldown = 2f;
+    private float lastGeneration = 0;
+    [SerializeField] public float WaveCooldown = 10f;
     private int currentWave = 0;
 
     void Update()
