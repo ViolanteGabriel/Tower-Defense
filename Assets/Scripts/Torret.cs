@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class Torret : MonoBehaviour
 {
-    public Transform target;
+    private Transform target;
+    private float range = 15f;
+    private float turretTurnSpeed = 10f;
+    private float fireRate = 1f;
+    private float fireCountdown = 0f;
+    private string enemyTag = "Enemy";
+
     public Transform partToRotate;
-    public float range = 30f;
-    public float turretTurnSpeed = 10f;
-    public string enemyTag = "Enemy";
     
 
 
@@ -38,6 +41,11 @@ public class Torret : MonoBehaviour
         else target = null;
     }
 
+    void Fire()
+    {
+
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -48,6 +56,14 @@ public class Torret : MonoBehaviour
         Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, rotationDirection, Time.deltaTime * turretTurnSpeed).eulerAngles;
 
         partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+
+        if (fireCountdown <= 0f)
+        {
+            Fire();
+            fireCountdown = 1f / fireRate;
+        }
+
+        fireCountdown -= Time.deltaTime;
     }
 
 }
