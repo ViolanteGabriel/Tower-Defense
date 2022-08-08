@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-
     [SerializeField] private Transform target;
+    [SerializeField] [Range(0,100)] private int damage = 7;
     [SerializeField] private float speed = 70f;
 
     public void Chase(Transform _target)
@@ -15,6 +15,7 @@ public class Bullet : MonoBehaviour
 
     public void HitTarget()
     {
+        target.gameObject.GetComponent<Enemy>().ReceiveDamage(damage);
         Destroy(gameObject);
     }
 

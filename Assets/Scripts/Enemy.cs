@@ -2,8 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyPath : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
+	[SerializeField] private int life = 21;
+
+    public void ReceiveDamage(int damage)
+    {
+        life -= damage;
+        if (life <= 0) Destroy(this.gameObject);
+    }
+	
     // Start is called before the first frame update
     void Start()
     {
