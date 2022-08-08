@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2527281471322989375}
   - component: {fileID: -3666274424553946720}
   m_Layer: 0
-  m_Name: GameMaster
+  m_Name: WaveGenerator
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -45,4 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemy: {fileID: 921202741095631123, guid: 7c06dcff3570ed9459d10120583dbb13, type: 3}
-  timeBetweenWaves: 2
+  WaveCooldown: 2
